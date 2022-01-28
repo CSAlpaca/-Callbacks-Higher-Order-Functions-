@@ -1,0 +1,16 @@
+// Callback of higher order functions example from youtubehttps://github.com/CSAlpaca/-Callbacks-Higher-Order-Functions-
+function copyArrayAndFunction (array, instructions) {
+    let output = [];
+    for (let i=0; i < array.length; i++) {
+        output.push(instructions(array[i]));
+    } //push means to send the new value at the end of an array but in this case ours is empty
+    // instructions come from the line 13 let result which is multiplyBy2 then uses function multiplyBy2
+    
+    return output;
+}
+function multiplyBy2(input) {
+    return input *2;
+}
+let result = copyArrayAndFunction([1,2,3], multiplyBy2);
+
+console.log(result)
